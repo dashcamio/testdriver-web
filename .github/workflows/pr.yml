@@ -19,3 +19,6 @@ jobs:
             1. navigate to youtube.com in google chrome
             1. search for cat videos
             1. click the first one
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORCE_COLOR: "3"
