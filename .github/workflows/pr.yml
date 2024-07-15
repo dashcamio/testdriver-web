@@ -13,12 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: dashcamio/testdriver@main
-        id: testdriver
+        version: v3.6.0
+        key: ${{secrets.DASHCAM_API}}
         with:
           prompt: |
-            1. navigate to youtube.com in google chrome
-            1. search for cat videos
-            1. click the first one
+            1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testt.yml
+          prerun: |
+            npm install dashcam-chrome --save
+            /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --start-maximized --load-extension=./node_modules/dashcam-chrome/build/ 1>/dev/null 2>&1 &
+            exit 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
