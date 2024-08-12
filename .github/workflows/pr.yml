@@ -17,7 +17,7 @@ jobs:
         key: ${{secrets.DASHCAM_API}}
         with:
           prompt: |
-            1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testt.yml
+            1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/test.yml
           prerun: |
             npm install dashcam-chrome --save
             /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --start-maximized --load-extension=./node_modules/dashcam-chrome/build/ 1>/dev/null 2>&1 &
