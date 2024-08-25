@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: testdriverai/agent@main
         version: v4.0.0
-        key: ${{secrets.DASHCAM_API}}
+        key: ${{secrets.TESTDRIVER_API_KEY}}
         with:
           prompt: |
             1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/.testdriver/test.yml
