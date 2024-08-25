@@ -78,18 +78,6 @@ If you do not already have deploy previews from something like Vercel or Netlify
 In order to build your application, modify [the `.testdriver/prerun.sh` script](https://github.com/dashcamio/testdriver-web/blob/main/.testdriver/prerun.sh) to include your build steps. Fore example, you may add `npm build` here.
 
 Note that currently causing an exception within `prerun.sh` may cause the test to silently fail.
-
-# Roadmap
-
-- [x] Mac Support
-- [ ] Windows Support (5 minutes faster and 10x scale)
-- [ ] Account Linking
-  - [ ] Publish to your own Dashcam.io Account   
-  - [ ] Choose Dashcam Project to upload to
-- [ ] Publish GitHub action into the store
-- [ ] Streaming results
-  - [ ] Streaming Video
-  - [ ] Streaming Logs
 - [ ] TestDriver Model V2
 - [ ] Interface updates
   - [ ] Auto-focus AI logs in Dashcam.io
