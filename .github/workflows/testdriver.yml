@@ -11,7 +11,7 @@ jobs:
     name: "TestDriver"
     runs-on: ubuntu-latest
     steps:
-      - uses: dashcamio/testdriver@main
+      - uses: testdriverai/agent@main
         version: v4.0.0
         key: ${{secrets.DASHCAM_API}}
         with:
