@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: testdriverai/action@main
-        key: ${{secrets.TESTDRIVER_API_KEY}}
         with:
+          key: ${{secrets.TESTDRIVER_API_KEY}}
           prompt: |
             1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
         env:
