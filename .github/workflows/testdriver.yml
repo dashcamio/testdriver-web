@@ -14,8 +14,15 @@ jobs:
       - uses: testdriverai/action@main
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
+          website_url: "https://example.com"
           prompt: |
             1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
+          prerun: |
+            cd $env:TEMP
+            npm init -y
+            npm install dashcam-chrome
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized", "--load-extension=$(pwd)/node_modules/dashcam-chrome/build", "${{ inputs.website_url }}"
+            exit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
